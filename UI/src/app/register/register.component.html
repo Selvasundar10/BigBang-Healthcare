@@ -1,0 +1,51 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form (ngSubmit)="onSubmit()" #formm="ngForm">
+      <div class="form-group">
+
+  <h3>Sign Up</h3>
+  <label for="username">Username</label>
+  <!-- #name="ngModel" [(ngModel)]="user.userName" required minlength="3" -->
+  <input type="text" name ="userName" placeholder="Username" id="username">
+  <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" [ngClass]="{error:true}">
+
+      Username is required.
+
+  </div> -->
+  <!-- [(ngModel)]="user.mailId" required #email="ngModel" minlength="5" -->
+  <label for="email">Email</label>
+  <input type="Email" name ="Email"  placeholder="Email" id="email">
+  <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)"[ngClass]="{error:true}">
+      Email is required.
+     </div> -->
+     <label for="fname">First Name</label>
+     <input type="fname" name ="fname"  placeholder="First Name" id="fname">
+     <label for="lname">Last Name</label>
+     <input type="lname" name ="lname"  placeholder="Last name" id="lname">
+     <label for="role">Gender</label>
+     <select id="role" name="role">
+         <option value="Male">Male</option>
+         <option value="Female">Female</option>
+           </select>
+  <label for="role">Role</label>
+        <select id="role" name="role">
+            <option value="Doctor">Doctor</option>
+            <option value="Patient">Patient</option>
+              </select>
+              <!-- [(ngModel)]="user.password" required minlength="5" #password="ngModel" -->
+  <label for="password">Password</label>
+  <input type="password" name ="password"  placeholder="Password" id="password">
+  <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" [ngClass]="{error:true}">
+
+      <div *ngIf="password.value==''">
+        Password is required.
+      </div> -->
+  <button type="button" class="btn btn-success" [disabled]="formm.invalid">Sign Up</button>
+<p id="acc">Already have an Account?<a routerLink="/Login">Login</a> </p>
+</div>  
+</form>
+<div id="img">
+  <img src="assets/login.gif" alt="Image Description" width="100%" height="400rem">
+</div>
