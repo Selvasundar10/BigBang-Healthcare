@@ -3,28 +3,27 @@
   <div class="shape"></div>
 </div>
 <div>
-  <!-- (ngSubmit)="onSignIn(email.value,password.value)" class="signin-form" #form="ngForm" -->
-<form >
-  <h3>Login</h3>
+<form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <h3 class="animate-charcter">Login</h3>
   <label for="username" >Username</label>
-  <!-- name="email" [(ngModel)]="user.mailId" required email #email="ngModel" -->
   <input type="text" placeholder="Username" id="username" >
-  <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)" [ngClass]="{error:true}">
-
-    Email is required.
-
-</div> -->
-<!-- [(ngModel)]="user.password" required minlength="8" #password="ngModel" -->
   <label for="password">Password</label>
   <input type="password" name ="password" placeholder="Password" id="password">
-  <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" [ngClass]="{error:true}">
-    <div *ngIf="password.value==''">
-      Password is required.
+  <div *ngIf="submitted && formControl['password'].errors" class="text-danger">
+    <div *ngIf="formControl['password'].errors['required']">Password is required.</div>
+    <div *ngIf="formControl['password'].errors['pattern']">
+      <ul>
+        <li>Password should be alphanumeric</li>
+        <li>A letter of the password should be capital</li>
+        <li>Password must contain a special character (@, $, !, &, etc)</li>
+        <li>Password length must be greater than 7 characters</li>
+      </ul>
     </div>
-  </div> -->
-  <button type="submit" class="btn btn-success" id="signin-button">Login</button> 
+  </div>
+  <button type="submit" class="btn btn-success" id="signin-button"><a routerLink="/homenav">
+    Login</a></button> 
 </form>
 </div>
 <div id="img">
-  <img src="assets/login.gif" alt="Image Description" width="100%" height="400rem">
+  <img src="assets/Login/login.gif" alt="Image Description" width="100%" height="400rem">
 </div>

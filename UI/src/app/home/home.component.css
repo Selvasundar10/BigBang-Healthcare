@@ -1,0 +1,238 @@
+div.gallery {
+      border: 1px solid #ccc;
+    }
+    
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+    
+    * {
+      box-sizing: border-box;
+
+            font-family: sans-serif;
+    }
+    
+    .responsive {
+      padding: 0 6px;
+      float: left;
+      width: 24.99999%;
+    }
+
+    
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+    
+   
+
+    .waviy {
+      position: relative;
+    }
+    .waviy span {
+      position: relative;
+      display: inline-block;
+      font-size: 40px;
+      color: #fff;
+      text-transform: uppercase;
+      animation: flip 2s infinite;
+      animation-delay: calc(.2s * var(--i))
+    }
+    @keyframes flip {
+      0%,80% {
+        transform: rotateY(360deg) 
+      }
+    }
+    
+    .waviy {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 20px;
+    }
+    :root {
+      --red: #ef233c;
+      --darkred: #c00424;
+      --platinum: #e5e5e5;
+      --black: #2b2d42;
+      --white: #fff;
+      --thumb: #edf2f4;
+  }
+  
+  * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+  }
+  
+  body {
+      font: 16px / 24px "Rubik", sans-serif;
+      color: var(--black);
+      background: var(--platinum);
+      margin: 50px 0;
+  }
+  
+  .container {
+      max-width: 1400px;
+      padding: 0 15px;
+      margin: 0 auto;
+  }
+  
+  h2 {
+      font-size: 32px;
+      margin-bottom: 1em;
+  }
+  
+  .cards {
+      display: flex;
+      padding: 25px 0px;
+      list-style: none;
+      overflow-x: scroll;
+      -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  }
+  
+  .card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 100%;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+      scroll-snap-align: start;
+      transition: all 0.2s;
+  }
+  
+  .card:not(:last-child) {
+      margin-right: 10px;
+  }
+  
+  .card:hover {
+      color: var(--white);
+      background: var(--red);
+  }
+  
+  .card .card-title {
+      font-size: 20px;
+      text-align: center;
+
+  }
+  
+  .card .card-content {
+      margin: 20px 0;
+      max-width: 85%;
+      align-items: center;
+  }
+  
+  .card .card-link-wrapper {
+      margin-top: auto;
+  }
+  
+  .card .card-link {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: var(--red);
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+  }
+  
+  .card:hover .card-link {
+      background: var(--darkred);
+  }
+  
+  .cards::-webkit-scrollbar {
+      height: 12px;
+  }
+  #gen{
+      margin-left: 52px;
+  }
+  .cards::-webkit-scrollbar-thumb,
+  .cards::-webkit-scrollbar-track {
+      border-radius: 92px;
+  }
+  
+  .cards::-webkit-scrollbar-thumb {
+      background: var(--darkred);
+  }
+  
+  .cards::-webkit-scrollbar-track {
+      background: var(--thumb);
+  }
+ 
+  @media (min-width: 500px) {
+      .card {
+          flex-basis: calc(50% - 10px);
+      }
+  
+      .card:not(:last-child) {
+          margin-right: 20px;
+      }
+  }
+  
+  @media (min-width: 700px) {
+      .card {
+          flex-basis: calc(calc(100% / 3) - 20px);
+      }
+  
+      .card:not(:last-child) {
+          margin-right: 30px;
+      }
+  }
+  
+  @media (min-width: 1100px) {
+      .card {
+          flex-basis: calc(25% - 30px);
+      }
+  
+      .card:not(:last-child) {
+          margin-right: 40px;
+      }
+  }
+  
+
+#excel {
+      font-weight: 700;
+      text-align: center;
+      font-size: 40px;
+      font-family: Hack, sans-serif;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #000, #fff, #000);
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 80%;
+      animation: shine 7s linear infinite;
+      position: relative;
+    }
+    
+    @keyframes shine {
+      0% {
+        background-position-x: -500%;
+      }
+      100% {
+        background-position-x: 500%;
+      }
+    }

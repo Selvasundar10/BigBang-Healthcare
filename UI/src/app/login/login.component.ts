@@ -1,7 +1,6 @@
-import { OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Component, VERSION } from "@angular/core";
+import { Router,  } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,37 +10,37 @@ import { Router, RouterLink } from '@angular/router';
 
 export class LoginComponent {
 
-  constructor(private router: Router){}
-  onCheck()
-  {
+   public loginForm!: FormGroup;
+  public submitted = false;
 
-    if(!localStorage.getItem("jwtToken"))
-    {
-      this.router.navigate(['/Login']);
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
+
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ["", [Validators.email, Validators.required]],
+      password: [
+        "",
+        [
+          Validators.required,
+          Validators.pattern(
+            "(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>\"'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}"
+          )
+        ]
+      ]
+    });
+  }
+
+  get formControl() {
+    return this.loginForm.controls;
+  }
+
+  onLogin(): void {
+    // console.log(this.loginForm.value);
+    this.submitted = true;
+    if (this.loginForm.valid) {
+      console.log(this.loginForm.value);
+      localStorage.setItem("user-Data", JSON.stringify(this.loginForm.value));
+      this.router.navigate(["/"]);
     }
   }
-  // onSubmit(): void {
-  //   // Handle the form submission logic here
-  //   console.log(this.user);
-  //   // You can send the user data to an API or perform any other actions
-  // }
-  onSignIn(mailId: string, password: string) {
-  //   this.authService.signIn(mailId, password)
-  //     .subscribe(
-  //       (response) => {
-  //         if(confirm("Logged in successfully"))
-  //         {
-  //           this.router.navigate(['/uHome']);
-  //         }
-  //       },
-  //       (error) => {
-  //         alert("Please enter correct username or password!!!!");
-  //       }
-  //     );
-  // }
-  if(confirm("SignIn successfully")){
-    this.router.navigate(['/uHome'])
-
-  }
-}
 }
