@@ -1,97 +1,137 @@
-*{
-	position: fixed;
-}
-nav {
-	/* margin: 27px auto 0; */
 
+    
+    /* Navigation Styles */
+    *{
+      font-family:  "Rubik", sans-serif;
+    }
+    header {
+	background: #eee;
+	text-align: center;
 	position: relative;
+	margin-top: 0;
+	z-index: 1000;
 	width: 100%;
-	height: 80px;
-	background-color: white;
-	border-radius: 8px;
-	font-size: 0;
-}
-#head{
-	margin-right: 20px;
-}
-nav a {
-	line-height: 50px;
+	max-width: 1600px;
+	height: 70px;
+
+    }
+    
+    .logo {
+	font-size: 1.25rem;
+	margin: 1rem;
+	text-transform: uppercase;
+    }
+    
+    nav {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	text-align: left;
+	padding-top: 2rem;
+	display: none;
+    }
+    
+    .nav-toggle {
+	display: none;
+    }
+    
+    .nav-toggle-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
 	height: 100%;
-	font-size: 15px;
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+	display: block;
+	background: black;
+	height: 2px;
+	width: 2em;
+	border-radius: 2px;
 	position: relative;
-	z-index: 1;
+    }
+    
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+	content: '';
+	position: absolute;
+    }
+    
+    .nav-toggle-label span::before {
+	bottom: 7px;
+    }
+    
+    .nav-toggle-label span::after {
+	top: 7px;
+    }
+    
+    nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    }
+    
+    nav li {
+	margin-bottom: 1.5em;
+	margin-left: 1em;
+    }
+    
+    nav a {
+	color: black;
 	text-decoration: none;
 	text-transform: uppercase;
-	text-align: center;
-	color: rgb(0, 0, 0);
-	cursor: pointer;
-}
-nav .animation {
-	position: absolute;
-	height: 100%;
-	top: 0;
-	z-index: 0;
-	transition: all .6s ease 0s;
-	border-radius: 8px;
-}
-a:nth-child(1) {
-	width: 100px;
-}
-a:nth-child(2) {
-	width: 110px;
-}
-a:nth-child(3) {
-	width: 100px;
-}
-a:nth-child(4) {
-	width: 160px;
-}
-a:nth-child(5) {
-	width: 120px;
-}
-a:nth-child(6) {
-	width: 120px;
-}
-nav .start-home, a:nth-child(1):hover~.animation {
-	width: 100px;
-	left: 0;
-	background-color: #1abc9c;
-}
-nav .start-about, a:nth-child(2):hover~.animation {
-	width: 110px;
-	left: 100px;
-	background-color: #e74c3c;
-}
-nav .start-blog, a:nth-child(3):hover~.animation {
-	width: 100px;
-	left: 210px;
-	background-color: #3498db;
-}
-nav .start-portefolio, a:nth-child(4):hover~.animation {
-	width: 160px;
-	left: 310px;
-	background-color: #9b59b6;
-}
-nav .start-login, a:nth-child(5):hover~.animation {
-	width: 120px;
-	left: 470px;
-	background-color: #e67e22;
-}
-nav .start-logout, a:nth-child(6):hover~.animation {
-	width: 160px;
-	left: 510px;
-	background-color: #d67367;
-}
-
-body {
-	font-size: 12px;
-	font-family: sans-serif;
-	background: #2c3e50;
-}
+    }
+    
+    nav a:hover {
+      color: #8f2362;      
+    }
+    
+    .nav-toggle:checked ~ nav {
+	display: block;
+    }
+    
+    @media (min-width: 900px) {
+	.nav-toggle-label {
+	  display: none;
+	}
+	
+	header {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  padding: 0 1rem;
+	  background: #eee;
+	}
+	
+	nav {
+	  all: unset;
+	  display: flex;
+	  justify-content: space-around;
+	  align-items: center;
+	  margin-right: 1em;
+	}
+	
+	nav ul {
+	  display: flex;
+	  align-items: center;
+	  gap: 1rem;
+	}
+	
+	 nav li { 
+	  margin-bottom: 0;
+	  padding: 0;
 
 
+	}
+    }
+       
 
-span {
-    color: #2BD6B4;
-}
+    
+    
+    

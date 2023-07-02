@@ -9,6 +9,12 @@ import { RegisterComponent } from './register/register.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { AppoinmentComponent } from './appoinment/appoinment.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { SpecialitiesComponent } from './specialities/specialities.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +22,11 @@ import { FooterComponent } from './footer/footer.component';
     RegisterComponent,
     HomeNavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    AppoinmentComponent,
+    DoctorsComponent,
+    InsuranceComponent,
+    SpecialitiesComponent
     
 
   ],
@@ -25,6 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CarouselModule
+
 
   ],
   providers: [],

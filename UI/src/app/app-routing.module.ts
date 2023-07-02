@@ -5,6 +5,10 @@ import { RegisterComponent } from './register/register.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppoinmentComponent } from './appoinment/appoinment.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { SpecialitiesComponent } from './specialities/specialities.component';
 
 const routes: Routes = [
   {path:'Login' , component:LoginComponent},
@@ -12,9 +16,11 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'homenav', component:HomeNavbarComponent},
   {path:'home', component:HomeComponent},
-  {path:'footer', component:HomeComponent}
-
-
+  {path:'footer', component:HomeComponent},
+  {path:'appoinment', component:AppoinmentComponent},
+  {path:'doctors', component:DoctorsComponent},
+  {path:'insurance', component:InsuranceComponent},
+  {path:'specialities', component:SpecialitiesComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

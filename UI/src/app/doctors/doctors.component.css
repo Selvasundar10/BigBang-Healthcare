@@ -1,0 +1,34 @@
+.doctors{
+      margin-top: 30px;
+}
+main{
+	display: block;
+	max-width: 200%;
+	border: 1px solid whitesmoke;
+	width: 27%;
+	float: left;
+      margin-left: 250px;
+      margin-top: 90px;
+}
+aside{
+	display: block;
+	max-width: 200%;
+	border: 1px solid whitesmoke;
+	text-align: left;
+	width: 45%;
+	margin-left: 45%;
+      margin-top: 30px;
+
+}
+
+aside p{
+	text-align: left;
+	padding: 5px;
+}
+
+main img{
+	max-width: 100%;
+	border-radius: 46%;
+	width: 180px;
+	height: 153px;
+}
