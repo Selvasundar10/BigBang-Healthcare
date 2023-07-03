@@ -1,4 +1,4 @@
-﻿namespace BigBang_Healthcare.Repository.Interface
+﻿namespace JWTAuthenticationApp.Interface
 {
     public interface IRepo<K, T> : IBaseRepo<K, T>
     {

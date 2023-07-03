@@ -252,3 +252,4 @@ E:\Projects\BigBang-Healthcare\BigBang-Healthcare\BigBang-Healthcare\obj\Debug\n
 E:\Projects\BigBang-Healthcare\BigBang-Healthcare\BigBang-Healthcare\obj\Debug\net7.0\BigBang-Healthcare.pdb
 E:\Projects\BigBang-Healthcare\BigBang-Healthcare\BigBang-Healthcare\obj\Debug\net7.0\BigBang-Healthcare.genruntimeconfig.cache
 E:\Projects\BigBang-Healthcare\BigBang-Healthcare\BigBang-Healthcare\obj\Debug\net7.0\ref\BigBang-Healthcare.dll
+E:\Projects\BigBang-Healthcare\BigBang-Healthcare\BigBang-Healthcare\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

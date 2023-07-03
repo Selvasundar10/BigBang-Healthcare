@@ -1,11 +1,11 @@
-﻿using BigBang_Healthcare.DTO;
-using BigBang_Healthcare.Repository.Interface;
+﻿using JWTAuthenticationApp.Models.DTO;
+using JWTAuthenticationApp.Interface;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace BigBang_Healthcare.Repository.Service
+namespace JWTAuthenticationApp.Service
 {
     public class TokenService : ITokenGenerate
     {

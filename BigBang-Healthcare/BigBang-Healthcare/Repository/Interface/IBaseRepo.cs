@@ -1,6 +1,4 @@
-﻿using BigBang_Healthcare.DTO;
-
-namespace BigBang_Healthcare.Repository.Interface
+﻿namespace JWTAuthenticationApp.Interface
 {
     public interface IBaseRepo<K, T>
     {

@@ -14,7 +14,7 @@ import { AppoinmentComponent } from './appoinment/appoinment.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
-import { AnimeComponent } from './anime/anime.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { AnimeComponent } from './anime/anime.component';
     DoctorsComponent,
     InsuranceComponent,
     SpecialitiesComponent,
-    AnimeComponent
+    SidebarComponent
     
 
   ],

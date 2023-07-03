@@ -1,10 +1,15 @@
 ﻿using BigBang_Healthcare.Data;
-using BigBang_Healthcare.Models;
+using JWTAuthenticationApp.Interface;
+using JWTAuthenticationApp.Models;
+using JWTAuthenticationApp.Models.DTO;
 using System.Diagnostics;
 
-namespace BigBang_Healthcare.Repository.Service
+
+
+
+namespace JWTAuthenticationApp.Service
 {
-    public class UserRepo
+    public class UserRepo : IBaseRepo<string, User>
     {
         private readonly HealthcareDbContext _context;
 

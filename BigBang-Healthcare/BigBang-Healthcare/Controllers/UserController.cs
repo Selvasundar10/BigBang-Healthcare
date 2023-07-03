@@ -1,11 +1,12 @@
-﻿using BigBang_Healthcare.DTO;
-using BigBang_Healthcare.Repository.Service;
+﻿using BigBang_Healthcare.Repository.Service;
+using JWTAuthenticationApp.Models.DTO;
+using JWTAuthenticationApp.Repository.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BigBang_Healthcare.Controllers
 {
-    
-        [Route("api/[controller]")]
+
+    [Route("api/[controller]")]
         [ApiController]
         public class UserController : ControllerBase
         {

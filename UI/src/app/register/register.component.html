@@ -1,5 +1,7 @@
 <div class="background">
   <div class="shape"></div>
+  <div class="shape"></div>
+
 </div>
 <div>
 <form class="user-login" [formGroup]="registrationForm" (ngSubmit) = "onSubmit">
@@ -8,6 +10,7 @@
   <input type="text" placeholder="Username" id="username" >
   <label for="username" >email</label>
   <input type="text" placeholder="Email" id="email" >
+  <label >Role</label>
   <select id="role" name="role">
     <option value="Doctor">Doctor</option>
     <option value="Patient">Patient</option>

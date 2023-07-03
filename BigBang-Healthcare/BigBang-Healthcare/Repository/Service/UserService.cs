@@ -1,10 +1,10 @@
-﻿using BigBang_Healthcare.DTO;
-using BigBang_Healthcare.Models;
-using BigBang_Healthcare.Repository.Interface;
+﻿using BigBang_Healthcare.Models;
+using JWTAuthenticationApp.Models.DTO;
+using JWTAuthenticationApp.Interface;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BigBang_Healthcare.Repository.Service
+namespace JWTAuthenticationApp.Repository.Service
 {
     public class UserService
     {

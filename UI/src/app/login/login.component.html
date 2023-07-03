@@ -3,28 +3,30 @@
   <div class="shape"></div>
 </div>
 <div>
-<form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
-  <h3 class="animate-charcter">Login</h3>
-  <label for="username" required>Username</label>
-  <input type="text" placeholder="Username" id="username" formControlName="email">
-  <label for="password">Password</label>
-  <input type="password" name ="password" placeholder="Password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!&])[A-Za-z\d@$!&]{8,}$">
-    <div *ngIf="submitted && formControl['password'].errors" class="text-danger">
-      <div *ngIf="formControl['password'].errors['required']">Password is required.</div>
-      <div *ngIf="formControl['password'].errors['pattern']">
+  <form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h3 class="animate-character">Login</h3>
+    <label for="username">Username</label>
+    <input type="text" name="uname" placeholder="User Name" id="username">
+    <div *ngIf="loginForm.controls['uname'].invalid && loginForm.controls['uname'].touched">
+      <div *ngIf="loginForm.controls['uname'].errors?.['required']">Username is required.</div>
+    </div>
+    <label for="password" class="text-danger">Password</label>
+    <input type="password" name="password" placeholder="Password" id="password"
+      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!&])[A-Za-z\d@$!&]{8,}$">
+    <div *ngIf="submitted && loginForm.controls['password'].errors" class="text-danger error">
+      <div *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</div>
+      <div *ngIf="loginForm.controls['password'].errors?.['pattern']">
         <ul>
           <li>Password should be alphanumeric</li>
           <li>A letter of the password should be capital</li>
-          <li>Password must contain a special character (@, $, !, &, etc)</li>
+          <li>Password must contain a special character (@, $, !, &amp;, etc)</li>
           <li>Password length must be greater than 7 characters</li>
         </ul>
       </div>
     </div>
-    
-  
-  <button type="submit" class="btn btn-success" id="signin-button"><a routerLink="/home">
-    Login</a></button> 
-</form>
+    <button type="submit" class="btn btn-success" id="signin-button" [disabled]="loginForm.invalid"><a
+        routerLink="/home">Login</a></button>
+  </form>
 </div>
 <div id="img">
   <img src="assets/Login/login.gif" alt="Image Description" width="100%" height="400rem">

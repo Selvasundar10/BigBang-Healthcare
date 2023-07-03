@@ -1,8 +1,8 @@
-﻿using BigBang_Healthcare.DTO;
+﻿using JWTAuthenticationApp.Models.DTO;
 
-namespace BigBang_Healthcare.Repository.Interface
+namespace JWTAuthenticationApp.Interface
 {
-   public interface ITokenGenerate
+    public interface ITokenGenerate
     {
         public string GenerateToken(UserDTO user);
     }

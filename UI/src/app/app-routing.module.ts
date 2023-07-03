@@ -9,7 +9,7 @@ import { AppoinmentComponent } from './appoinment/appoinment.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
-import { AnimeComponent } from './anime/anime.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
   {path:'login' , component:LoginComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'insurance', component:InsuranceComponent},
   {path:'specialities', component:SpecialitiesComponent},
   {path:'auth', component:SpecialitiesComponent},
-  {path:'anime', component:AnimeComponent},
+  {path:'sidebar', component:SidebarComponent},
 
 
 

@@ -2,7 +2,9 @@
   font-family: 'Times New Roman', Times, serif;
   padding: -7px;
 }
-
+.error{
+    color:red;
+}
 *:before,
 *:after{
     padding: 0;

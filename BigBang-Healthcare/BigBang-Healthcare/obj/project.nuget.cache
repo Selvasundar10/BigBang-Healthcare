@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FDqg341+D2XxxOx+aEp1iU36yiC/JsLn5v2EDIf+N8E6z/XZsteDrBg7qToPHtHNmdysGt0TWPX3lD3ChPVWAQ==",
+  "dgSpecHash": "4pK1X0xG4DyshZHpTqaPRvKsZc8i3psdWjmVqU/6KVAqOOpLGsR6w7HBTU2UK6lLbC3+M2JBNB+U2z8yB0BgAA==",
   "success": true,
   "projectFilePath": "E:\\Projects\\BigBang-Healthcare\\BigBang-Healthcare\\BigBang-Healthcare\\BigBang-Healthcare.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\tsksu\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\tsksu\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\tsksu\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\tsksu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.8\\microsoft.aspnetcore.authentication.jwtbearer.7.0.8.nupkg.sha512",
     "C:\\Users\\tsksu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.8\\microsoft.aspnetcore.openapi.7.0.8.nupkg.sha512",
     "C:\\Users\\tsksu\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\tsksu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

@@ -1,6 +1,6 @@
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Component, VERSION } from "@angular/core";
-import { Router,  } from '@angular/router';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +10,14 @@ import { Router,  } from '@angular/router';
 
 export class LoginComponent {
 
-   public loginForm!: FormGroup;
+  loginForm! : FormGroup;
   public submitted = false;
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ["", [Validators.email, Validators.required]],
+      Username: ['', Validators.required],
       password: [
         "",
         [
@@ -34,12 +34,14 @@ export class LoginComponent {
     return this.loginForm.controls;
   }
 
-  onLogin(): void {
-    // console.log(this.loginForm.value);
-    this.submitted = true;
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      localStorage.setItem("user-Data", JSON.stringify(this.loginForm.value));
+  onLogin() {
+    if (this.loginForm?.valid) {
+      // Perform registration logic here
+  
+      // Navigate to the next page
+      this.router.navigate(['/home']);
+    } else {
+      // Throw an error or show an error message
+      throw new Error('Form is invalid');
     }
-  }
-}
+  }}

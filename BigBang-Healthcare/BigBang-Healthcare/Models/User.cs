@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace BigBang_Healthcare.Models
+namespace JWTAuthenticationApp.Models.DTO
 {
     public class User
     {
