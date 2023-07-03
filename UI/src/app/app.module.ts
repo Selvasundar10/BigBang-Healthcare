@@ -14,6 +14,7 @@ import { AppoinmentComponent } from './appoinment/appoinment.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
+import { AnimeComponent } from './anime/anime.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SpecialitiesComponent } from './specialities/specialities.component';
     AppoinmentComponent,
     DoctorsComponent,
     InsuranceComponent,
-    SpecialitiesComponent
+    SpecialitiesComponent,
+    AnimeComponent
     
 
   ],
