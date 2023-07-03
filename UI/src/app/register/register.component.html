@@ -1,51 +1,39 @@
 <div class="background">
   <div class="shape"></div>
-  <div class="shape"></div>
 </div>
-<form (ngSubmit)="onSubmit()" #formm="ngForm">
-      <div class="form-group">
+<div>
+<form class="user-login" [formGroup]="registrationForm" (ngSubmit) = "onSubmit">
+  <h3 class="animate-charcter">Sign Up</h3>
+  <label for="username" >Username</label>
+  <input type="text" placeholder="Username" id="username" >
+  <label for="username" >email</label>
+  <input type="text" placeholder="Email" id="email" >
+  <select id="role" name="role">
+    <option value="Doctor">Doctor</option>
+    <option value="Patient">Patient</option>
+      </select>
+      <label for="password">Password</label>
+      <input type="password" name ="password" placeholder="Password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!&])[A-Za-z\d@$!&]{8,}$">
+        <div *ngIf="submitted && formControl['password'].errors" class="text-danger">
+          <div *ngIf="formControl['password'].errors['required']">Password is required.</div>
+          <div *ngIf="formControl['password'].errors['pattern']">
+            <ul>
+              <li>Password should be alphanumeric</li>
+              <li>A letter of the password should be capital</li>
+              <li>Password must contain a special character (@, $, !, &, etc)</li>
+              <li>Password length must be greater than 7 characters</li>
+            </ul>
+          </div>
+        </div>
+    
+  
+  <button type="submit" class="btn btn-success" id="signin-button"><a routerLink="/login">
+    SignUp</a></button> 
+    <p> Already Have an account <a routerLink="/login"><span>Login</span></a></p>
 
-  <h3>Sign Up</h3>
-  <label for="username">Username</label>
-  <!-- #name="ngModel" [(ngModel)]="user.userName" required minlength="3" -->
-  <input type="text" name ="userName" placeholder="Username" id="username">
-  <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" [ngClass]="{error:true}">
+  </form> 
+</div>
 
-      Username is required.
-
-  </div> -->
-  <!-- [(ngModel)]="user.mailId" required #email="ngModel" minlength="5" -->
-  <label for="email">Email</label>
-  <input type="Email" name ="Email"  placeholder="Email" id="email">
-  <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)"[ngClass]="{error:true}">
-      Email is required.
-     </div> -->
-     <label for="fname">First Name</label>
-     <input type="fname" name ="fname"  placeholder="First Name" id="fname">
-     <label for="lname">Last Name</label>
-     <input type="lname" name ="lname"  placeholder="Last name" id="lname">
-     <label for="role">Gender</label>
-     <select id="role" name="role">
-         <option value="Male">Male</option>
-         <option value="Female">Female</option>
-           </select>
-  <label for="role">Role</label>
-        <select id="role" name="role">
-            <option value="Doctor">Doctor</option>
-            <option value="Patient">Patient</option>
-              </select>
-              <!-- [(ngModel)]="user.password" required minlength="5" #password="ngModel" -->
-  <label for="password">Password</label>
-  <input type="password" name ="password"  placeholder="Password" id="password">
-  <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" [ngClass]="{error:true}">
-
-      <div *ngIf="password.value==''">
-        Password is required.
-      </div> -->
-  <button type="button" class="btn btn-success" [disabled]="formm.invalid">Sign Up</button>
-<p id="acc">Already have an Account?<a routerLink="/Login">Login</a> </p>
-</div>  
-</form>
 <div id="img">
   <img src="assets/Login/login.gif" alt="Image Description" width="100%" height="400rem">
 </div>

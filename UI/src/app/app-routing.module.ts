@@ -11,7 +11,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
 
 const routes: Routes = [
-  {path:'Login' , component:LoginComponent},
+  {path:'login' , component:LoginComponent},
   {path:'', component:RegisterComponent},
   {path:'register', component:RegisterComponent},
   {path:'homenav', component:HomeNavbarComponent},
@@ -20,7 +20,10 @@ const routes: Routes = [
   {path:'appoinment', component:AppoinmentComponent},
   {path:'doctors', component:DoctorsComponent},
   {path:'insurance', component:InsuranceComponent},
-  {path:'specialities', component:SpecialitiesComponent}
+  {path:'specialities', component:SpecialitiesComponent},
+  {path:'auth', component:SpecialitiesComponent},
+
+
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

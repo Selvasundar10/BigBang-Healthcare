@@ -13,7 +13,7 @@ export class LoginComponent {
    public loginForm!: FormGroup;
   public submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -40,7 +40,6 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
       localStorage.setItem("user-Data", JSON.stringify(this.loginForm.value));
-      this.router.navigate(["/"]);
     }
   }
 }
