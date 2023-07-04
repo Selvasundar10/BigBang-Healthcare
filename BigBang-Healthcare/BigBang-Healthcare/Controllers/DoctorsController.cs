@@ -23,19 +23,22 @@ namespace BigBang_Healthcare.Controllers
             _context = context;
         }
 
-        // GET: api/Doctors
         [HttpGet]
-        public async Task<List<Doctor>> GetDoctor()
+        public async Task<List<Doctor>> GetRequest()
         {
-            return await _context.GetDoctor();
+            return await _context.GetRequest();
         }
 
-        // GET: api/Doctors/5
-        [HttpGet("{id}")]
-        public async Task<Doctor> GetDoctor(string id)
+        [HttpGet("Doctors")]
+        public async Task<List<Doctor>> DoctorDetails()
         {
+            return await _context.DoctorDetails();
+        }
 
-            return await _context.GetDoctor(id);
+        [HttpGet("{id}")]
+        public async Task<Doctor> logedinDoctor(string id)
+        {
+            return await _context.logedinDoctor(id);
         }
 
         // PUT: api/Doctors/5

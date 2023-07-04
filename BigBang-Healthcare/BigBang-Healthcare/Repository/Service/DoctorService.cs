@@ -13,20 +13,20 @@ namespace BigBang_Healthcare.Repository.Service
         {
             _context = context;
         }
-        public async Task<List<Doctor>> GetDoctor()
+        public async Task<List<Doctor>> GetRequest()
         {
-            return await _context.Doctor.ToListAsync();
+            return await _context.Doctor.Where(d => d.requestStatus == "request").ToListAsync();
+        }
+
+        public async Task<List<Doctor>> DoctorDetails()
+        {
+            return await _context.Doctor.Where(d => d.requestStatus == "Accepted").ToListAsync();
 
         }
-        public async Task<Doctor> GetDoctor(string id)
+        public async Task<Doctor> logedinDoctor(string id)
         {
-            var doc = await _context.Doctor.FirstOrDefaultAsync(x => x.Id == id);
-            if (doc == null)
-            {
-                return null;
-
-            }
-            return doc;
+            var doc = _context.Doctor.Where(d => d.requestStatus == "Accepted").FirstOrDefaultAsync(x => x.Id == id);
+            return await doc;
         }
 
         public async Task<Doctor> PutDoctor(string id, Doctor doctor)

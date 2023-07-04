@@ -83,7 +83,7 @@ namespace BigBang_Healthcare.Migrations
                     b.ToTable("Doctor");
                 });
 
-            modelBuilder.Entity("BigBang_Healthcare.Models.User", b =>
+            modelBuilder.Entity("JWTAuthenticationApp.Models.DTO.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");

@@ -1,47 +1,54 @@
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Component, VERSION } from "@angular/core";
-import { Router  } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserDTOModel } from '../Models/UserDTO.model';
+import { Router } from '@angular/router';
+import { LoggedInUserModel } from '../register/register.component';
+import { signupService } from '../Services/signup.services';
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  templateUrl: 'login.component.html',
   styleUrls: ['./login.component.css']
 })
+export class LoginComponent  {
+  userDTO:UserDTOModel
+  loggedInUser:LoggedInUserModel
+  
 
-export class LoginComponent {
+  constructor(private service:signupService, private router : Router){
+    this.userDTO=new UserDTOModel();
+    this.loggedInUser=new LoggedInUserModel
 
-  loginForm! : FormGroup;
-  public submitted = false;
+  }
+  
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+ 
 
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      Username: ['', Validators.required],
-      password: [
-        "",
-        [
-          Validators.required,
-          Validators.pattern(
-            "(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>\"'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}"
-          )
-        ]
-      ]
+  login(){
+
+    this.service.userLogin(this.userDTO).subscribe(data=>{
+      
+      this.loggedInUser = data as LoggedInUserModel;
+      console.log(this.loggedInUser);
+      
+      localStorage.setItem("token",this.loggedInUser.token);
+      localStorage.setItem("UserID",this.loggedInUser.id);
+      localStorage.setItem("role",this.loggedInUser.role);
+      localStorage.setItem("login", new Date().toDateString());
+      alert("Login Successful")
+      setTimeout(() => {
+        
+        this.router.navigate(['/home']);
+      }, 1000);
+
+
+    },
+    err=>{
+      console.log(err)
+      alert("Invalid Username/password")
     });
   }
 
-  get formControl() {
-    return this.loginForm.controls;
+  move(){
+    this.router.navigateByUrl('register');
   }
-
-  onLogin() {
-    if (this.loginForm?.valid) {
-      // Perform registration logic here
-  
-      // Navigate to the next page
-      this.router.navigate(['/home']);
-    } else {
-      // Throw an error or show an error message
-      throw new Error('Form is invalid');
-    }
-  }}
+}

@@ -1,42 +1,70 @@
-<div class="background">
-  <div class="shape"></div>
-  <div class="shape"></div>
-
-</div>
-<div>
-<form class="user-login" [formGroup]="registrationForm" (ngSubmit) = "onSubmit">
-  <h3 class="animate-charcter">Sign Up</h3>
-  <label for="username" >Username</label>
-  <input type="text" placeholder="Username" id="username" >
-  <label for="username" >email</label>
-  <input type="text" placeholder="Email" id="email" >
-  <label >Role</label>
-  <select id="role" name="role">
-    <option value="Doctor">Doctor</option>
-    <option value="Patient">Patient</option>
-      </select>
-      <label for="password">Password</label>
-      <input type="password" name ="password" placeholder="Password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!&])[A-Za-z\d@$!&]{8,}$">
-        <div *ngIf="submitted && formControl['password'].errors" class="text-danger">
-          <div *ngIf="formControl['password'].errors['required']">Password is required.</div>
-          <div *ngIf="formControl['password'].errors['pattern']">
-            <ul>
-              <li>Password should be alphanumeric</li>
-              <li>A letter of the password should be capital</li>
-              <li>Password must contain a special character (@, $, !, &, etc)</li>
-              <li>Password length must be greater than 7 characters</li>
-            </ul>
-          </div>
-        </div>
-    
+<div class="login_form">
+      <div class="container">
+        <form #register_form="ngForm">
+          <div class="form-outline mb-4">
+            <input type="text" class="form-control form-control-lg" required pattern="[a-zA-Z0-9]*"
+              placeholder="Username" id="id" name="id" #id="ngModel" [(ngModel)]="register.id" />
+            <div *ngIf="(id?.dirty || id?.touched)" class="text-danger">
+              <div *ngIf="!id?.valid">
+                <div *ngIf="id.errors?.['required']">
+                  User name is required
+                </div>
+                <div *ngIf="id.value && id.errors && !id.errors?.['required']">
+                  Please enter a valid input [Username should not contain special charaters]
+                </div>
+              </div>
+            </div>
+          </div><br>
   
-  <button type="submit" class="btn btn-success" id="signin-button"><a routerLink="/login">
-    SignUp</a></button> 
-    <p> Already Have an account <a routerLink="/login"><span>Login</span></a></p>
-
-  </form> 
-</div>
-
-<div id="img">
-  <img src="assets/Login/login.gif" alt="Image Description" width="100%" height="400rem">
-</div>
+  
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control form-control-lg" placeholder="Password"
+              [(ngModel)]="register.passwordClear" name="password" required
+              pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.\W).{8,}" #password="ngModel" />
+            <div *ngIf="password.invalid && password.touched" class="text-danger">
+              <div *ngIf="password.errors?.['required']">Password is required.</div>
+              <div *ngIf="password.errors?.['pattern']">
+                Password should contain a minimum of 8 characters with at least 1 uppercase, 1 lowercase, 1
+                digit, and 1 special character.
+              </div>
+            </div>
+          </div><br>
+          <!-- Email Field -->
+          <div class="form-outline mb-4">
+            <input type="email" class="form-control form-control-lg" placeholder="Email" name="email"
+              [(ngModel)]="register.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+              #email="ngModel" />
+            <div *ngIf="email.invalid && email.touched" class="text-danger">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
+            </div>
+          </div><br>
+         
+          <!-- Role Field -->
+          <div class="form-outline mb-4">
+            <select class="form-control form-control-lg"  [(ngModel)]="register.role" name="role" required
+              #role="ngModel" >
+              <option value="" disabled selected hidden >Select Role</option>
+              <option value="Doctor" >Doctor</option>
+              <option value="User">User</option>
+            </select>
+            <div *ngIf="role.invalid && role.touched" class="text-danger">
+              <div *ngIf="role.errors?.['required']">Role is required.</div>
+            </div>
+          </div><br>
+            <!-- Register Button -->
+            <div class="pt-3 mb-9">
+              <button class="btn btn-success" type="button" (click)="onPost()">Register</button>
+              <div *ngIf="showError" class="text-danger">Please fill all the fields.</div>
+            </div><br>
+  
+            <p class="mb-5 pb-lg-2">Already have an account?
+              <a (click)="login_here()">Login here </a>
+            </p>
+  
+            <span *ngIf="registration_status">Registration successful</span>
+          </form>
+      </div>     
+          <div id="login_image">
+            <img src="../../assets/Login/login.jpg">
+          </div>

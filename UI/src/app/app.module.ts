@@ -15,6 +15,12 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { signupService } from './Services/signup.services';
+import { doctorService } from './Services/doctor.service';
+import { AdminNavbarComponent } from './Admin/admin-navbar/admin-navbar.component';
+import { RequestsComponent } from './Admin/request/request.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
+import { DoctorNavbarComponent } from './doctor-navbar/doctor-navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DoctorsComponent,
     InsuranceComponent,
     SpecialitiesComponent,
-    SidebarComponent
+    SidebarComponent,
+    AdminNavbarComponent,
+    RequestsComponent,
+    DoctorListComponent,
+    DoctorNavbarComponent
+    
+    
     
 
   ],
@@ -37,11 +49,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule 
 
 
   ],
-  providers: [],
+  providers: [signupService,doctorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

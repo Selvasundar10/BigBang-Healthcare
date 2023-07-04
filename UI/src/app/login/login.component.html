@@ -1,33 +1,38 @@
-<div class="background">
-  <div class="shape"></div>
-  <div class="shape"></div>
-</div>
-<div>
-  <form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <h3 class="animate-character">Login</h3>
-    <label for="username">Username</label>
-    <input type="text" name="uname" placeholder="User Name" id="username">
-    <div *ngIf="loginForm.controls['uname'].invalid && loginForm.controls['uname'].touched">
-      <div *ngIf="loginForm.controls['uname'].errors?.['required']">Username is required.</div>
+<div class="container">
+  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login</h3>
+
+  <div class="form-outline mb-4">
+    <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder="User Name"
+      [(ngModel)]="userDTO.id" name="Username" required pattern="[a-zA-Z0-9]*" #username="ngModel" />
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+      <div *ngIf="username.errors?.['required']">User Name is required.</div>
+      <div *ngIf="username.errors?.['pattern']">User Name must not contain Special characters</div>
     </div>
-    <label for="password" class="text-danger">Password</label>
-    <input type="password" name="password" placeholder="Password" id="password"
-      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!&])[A-Za-z\d@$!&]{8,}$">
-    <div *ngIf="submitted && loginForm.controls['password'].errors" class="text-danger error">
-      <div *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</div>
-      <div *ngIf="loginForm.controls['password'].errors?.['pattern']">
-        <ul>
-          <li>Password should be alphanumeric</li>
-          <li>A letter of the password should be capital</li>
-          <li>Password must contain a special character (@, $, !, &amp;, etc)</li>
-          <li>Password length must be greater than 7 characters</li>
-        </ul>
-      </div>
+  </div><br><br>
+
+  <!-- <div class="form-outline mb-4">
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder="password" [(ngModel)]="userDTO.password"/> 
+                  </div> -->
+
+  <div class="form-outline mb-4">
+    <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder="Password"
+      [(ngModel)]="userDTO.password" name="password" required #password="ngModel" />
+
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+      <div *ngIf="password.errors?.['required']">Password is required.</div>
     </div>
-    <button type="submit" class="btn btn-success" id="signin-button" [disabled]="loginForm.invalid"><a
-        routerLink="/home">Login</a></button>
-  </form>
+  </div><br><br>
+
+  <div class="pt-1 mb-4">
+    <button class="btn btn-success" type="button" (click)="login()"><span>Login</span></button>
+  </div><br>
+
+  <!-- <li aria-disabled="true" class="small text-muted" href="#!">Forgot password?</li> -->
+  <p class="mb-5 pb-lg-2">Don't have an account?
+    <a (click)="move()">Register here </a>
+  </p>
+
 </div>
-<div id="img">
-  <img src="assets/Login/login.gif" alt="Image Description" width="100%" height="400rem">
+<div id="login_image">
+  <img src="../../assets/Login/login.jpg">
 </div>

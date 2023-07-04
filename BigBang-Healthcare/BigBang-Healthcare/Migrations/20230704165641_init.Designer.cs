@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BigBang_Healthcare.Migrations
 {
     [DbContext(typeof(HealthcareDbContext))]
-    [Migration("20230702184934_init")]
+    [Migration("20230704165641_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -86,7 +86,7 @@ namespace BigBang_Healthcare.Migrations
                     b.ToTable("Doctor");
                 });
 
-            modelBuilder.Entity("BigBang_Healthcare.Models.User", b =>
+            modelBuilder.Entity("JWTAuthenticationApp.Models.DTO.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");

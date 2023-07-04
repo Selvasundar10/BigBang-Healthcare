@@ -30,7 +30,9 @@
   background: white;
   transition: all 0.3s;
 }
-
+#sb-flex{
+  display: flex;
+}
 
 
 #sidebar.active {
@@ -59,8 +61,12 @@ button {
 
 img{
   height: 100px;
-}
+  margin-left:300px;}
 
+
+#test{
+  text-align: center;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
