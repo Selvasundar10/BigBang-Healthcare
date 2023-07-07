@@ -65,7 +65,7 @@ export class RequestsComponent {
 handleUpdate(req:any){
   this.docservice.DoctorStatus(req.id,req).subscribe(data=>{
     console.log("Doctor Status updated",req)
-    window.location.reload();
+   // window.location.reload();
   })
   
 }

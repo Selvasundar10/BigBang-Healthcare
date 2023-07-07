@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { signupService } from '../Services/signup.services';
 import { Router } from '@angular/router';
-import { doctorService } from '../Services/doctor.service';
+import { doctorService } from 'src/app/Services/doctor.service';
+import { signupService } from 'src/app/Services/signup.services';
 
 @Component({
   selector: 'app-doctor-list',
@@ -18,8 +18,7 @@ export class DoctorListComponent implements OnInit {
 
     this.DoctorRegister={
       id:"",
-      email:"",
-     
+      email:"",  
       role: "",
       specialization:" ",
       experiance:0,

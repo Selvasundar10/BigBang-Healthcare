@@ -1,18 +1,16 @@
 <header>
-	<h1 class="logo"></h1>
+		<img src="../../assets/Favicon/favicon.png" class="logo">
+	
 	<input type="checkbox" class="nav-toggle" id="nav-toggle">
 	<nav>
 		<ul>
 			<li> <a routerLink="home">Home</a></li>
 			<li> <a href="">About Us</a></li>
-			<li> <a routerLink="/doctors">Doctors</a></li>
-			<li> <a routerLink="/request">request</a></li>
-			<li> <a routerLink="/doctor-list">Doctor List</a></li>
-
-			<li> <a href="">Appoinment</a></li>
+	
+			<li> <a href="/appointment">Appoinment</a></li>
 			<li> <a routerLink="/insurance">Insurance</a></li>
 			<li> <a href="">Login</a></li>
-			<li> <a href="">Logout</a></li>
+			<li  (click)="onClickLogout()" style="cursor: pointer;">LOGOUT</li>
 		</ul>
 	</nav>
 	<label for="nav-toggle" class="nav-toggle-label">

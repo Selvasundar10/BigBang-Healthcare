@@ -12,6 +12,7 @@ import { signupService } from '../Services/signup.services';
 export class LoginComponent  {
   userDTO:UserDTOModel
   loggedInUser:LoggedInUserModel
+  role!: string | null;
   
 
   constructor(private service:signupService, private router : Router){
@@ -35,9 +36,20 @@ export class LoginComponent  {
       localStorage.setItem("role",this.loggedInUser.role);
       localStorage.setItem("login", new Date().toDateString());
       alert("Login Successful")
+
+      this.role=localStorage.getItem("role");
+      
       setTimeout(() => {
+        if(this.role=="Admin"){
+          this.router.navigate(['/request']);
+        }
+        else if(this.role=="Doctor"){
+          this.router.navigate(['/doctor-profile']);
+        }
+        else{
+          this.router.navigate(['/home']);
+        }
         
-        this.router.navigate(['/home']);
       }, 1000);
 
 
@@ -51,4 +63,6 @@ export class LoginComponent  {
   move(){
     this.router.navigateByUrl('register');
   }
+
+
 }

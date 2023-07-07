@@ -19,6 +19,7 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+  font-size: 14px;
 }
 
 * {
@@ -137,10 +138,6 @@ h2 {
   margin-right: 10px;
 }
 
-.card:hover {
-  color: var(--white);
-  background: var(--red);
-}
 
 .card .card-title {
   font-size: 20px;
@@ -250,9 +247,7 @@ h2 {
   }
 }
 
-/* .carousel-item:hover {
-      transform: scale(1.02);
-    } */
+
 .heading {
   text-align: center;
   font: 40px / 50px "Rubik", sans-serif;
@@ -340,7 +335,6 @@ marquee {
   margin-left: 20%;
   bottom: 0;
 }
-
 
 
 

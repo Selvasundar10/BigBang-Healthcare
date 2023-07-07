@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IBaseRepo<string, User>, UserRepo>();
 builder.Services.AddScoped<ITokenGenerate, TokenService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IDoctorRepo, DoctorService>();
 builder.Services.AddDbContext<HealthcareDbContext>(optionsAction: options => options.UseSqlServer(builder.Configuration.GetConnectionString(name: "Rolebased")));
 

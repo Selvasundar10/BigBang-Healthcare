@@ -16,6 +16,7 @@ namespace BigBang_Healthcare.Models
         public string requestStatus { get; set; } = string.Empty;
         public string password { get; set; } = string.Empty;
         public string phone { get; set; } = string.Empty;
+        public string? image { get; set; }
 
 
 

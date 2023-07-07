@@ -1,4 +1,6 @@
-<app-admin-navbar></app-admin-navbar><table class="table ">
+<app-admin-navbar></app-admin-navbar>
+<br>
+<table class="table ">
     <thead>
         
         <tr>
@@ -12,9 +14,7 @@
     <tbody>
         <tr *ngFor="let req of requests">
             <td>{{req.id}}</td>
-            <td>{{req.email}}</td>
-          
-
+            <td>{{req.email}}</td>          
             <td><button class="btn btn-success" (click)="handlePost(req)">Accept</button></td>
             <td><button class="btn btn-danger" (click)="handleDelete(req.id,req)">Denied</button></td>
 

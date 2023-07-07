@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit{
   ngOnInit(): void {
-    this.animateText('0101', 499888, 500000 , 1000);
-    this.animateText('0102', 0, 333, 1000);
-    this.animateText('0103', 100, 3000, 1000);
+    this.animateText('0101', 488888, 500000 , 4000);
+    this.animateText('0102', 0, 333, 4000);
+    this.animateText('0103', 0, 30000, 4000);
   }
 
   animateText(id: string, initVal: number, lastVal: number, duration: number) {

@@ -1,12 +1,12 @@
 <header>
-	<h1 class="logo"></h1>
+      <img src="../../assets/Favicon/favicon.png" class="logo">
 	<input type="checkbox" class="nav-toggle" id="nav-toggle">
 	<nav>
 		<ul>
 			
-			<li> <a routerLink="/request">Approved List</a></li>
+			<li> <a routerLink="/request">Pending List</a></li>
 			<li> <a routerLink="/doctor-list">Doctor List</a></li>
-			<li> <a routerLink="/Login">Logout</a></li>
+			<li  (click)="onClickLogout()" style="cursor: pointer;">LOGOUT</li>
 		</ul>
 	</nav>
 	<label for="nav-toggle" class="nav-toggle-label">

@@ -7,4 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeNavbarComponent{
 
+  onClickLogout(){
+    localStorage.removeItem('role')
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
 }

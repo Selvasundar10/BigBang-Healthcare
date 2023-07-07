@@ -31,10 +31,10 @@ namespace BigBang_Healthcare.Controllers
 
         // GET: api/Appointment/5
         [HttpGet("{id}")]
-        public async Task<Appointment> GetAppointment(string id)
+        public async Task<List<Appointment>?> GetAppointmentDetail(string id)
         {
 
-            return await _context.GetAppointment(id);
+            return await _context.GetAppointmentDetail(id); ;
         }
 
 
@@ -48,7 +48,7 @@ namespace BigBang_Healthcare.Controllers
 
         // DELETE: api/Appointment
         [HttpDelete("{id}")]
-        public async Task<string> DeleteAppointment(string id)
+        public async Task<string> DeleteAppointment(int id)
         {
             return await _context.DeleteAppointment(id);
 

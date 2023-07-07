@@ -9,6 +9,7 @@ using BigBang_Healthcare.Data;
 using BigBang_Healthcare.Models;
 using BigBang_Healthcare.Repository.Interface;
 using System.Numerics;
+using BigBang_Healthcare.Models.DTO;
 
 namespace BigBang_Healthcare.Controllers
 {

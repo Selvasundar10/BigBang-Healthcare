@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DoctorNavbarComponent {
 
+  onClickLogout(){
+    localStorage.removeItem('role')
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
 }

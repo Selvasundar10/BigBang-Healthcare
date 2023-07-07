@@ -11,7 +11,6 @@ import { LoggedInUserModel } from '../Models/LoggedInUser.model';
 })
 export class RegisterComponent implements OnInit{
   registrationForm!: FormGroup;
-  //roles = ['doctor', 'patient'];
   showError: boolean = false;
   registration_status = false;
 
@@ -46,13 +45,12 @@ export class RegisterComponent implements OnInit{
     return this.registrationForm.controls;
   }
 
+ 
   onPost(){
-    // if (this.registrationForm.invalid) {
-    //   return;
-    // }
-    // else{
+
 console.log(this.register);
     if(this.register.role=="Doctor"){
+
       this.service.Doctorsignup(this.register).subscribe(data=>{
         console.log("register request send to admin")
         setTimeout(() => {
@@ -73,8 +71,6 @@ console.log(this.register);
       setTimeout(() => {
         this.router.navigate(['login']);
       }, 3000);
-      // alert(`\t ........Registration successfull........
-      //   \n your user id is : ${this.loggedInUser.id} and your password is first 4 letters of your name + your birth date and month `);
     
     },
     err=>{
@@ -86,8 +82,7 @@ console.log(this.register);
    
 
   
-    //console.log('Registration Form Values:', this.registrationForm.value);
-    // Perform the registration logic or API request here
+
 
 
 }

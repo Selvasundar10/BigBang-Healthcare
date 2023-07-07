@@ -10,16 +10,14 @@
 	z-index: 1000;
 	width: 100%;
 	max-width: 1600px;
-	height: 70px;
+	height: 80px;
 
     }
     
     .logo {
-	font-size: 1.25rem;
-	margin: 1rem;
-	text-transform: uppercase;
-    }
-    
+height: 80px; 
+margin-left: 140px;   }
+ 
     nav {
 	position: absolute;
 	top: 100%;

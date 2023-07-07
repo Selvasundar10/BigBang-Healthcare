@@ -1,5 +1,6 @@
 ﻿using BigBang_Healthcare.Data;
 using BigBang_Healthcare.Models;
+using BigBang_Healthcare.Models.DTO;
 using BigBang_Healthcare.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,11 +37,12 @@ namespace BigBang_Healthcare.Repository.Service
             {
                 return null;
             }
-            doc.requestStatus = doc.requestStatus.ToString();
-            doc.phone = doc.phone.ToString();
-            doc.Email = doc.Email.ToString();
-            doc.Experiance = doc.Experiance;
-            doc.Specialization = doc.Specialization.ToString();
+               doc.image = doctor.image;
+            doc.phone = doctor.phone;
+            doc.Email = doctor.Email;
+            doc.Experiance = doctor.Experiance;
+            doc.Specialization = doctor.Specialization  ;
+            doc.requestStatus= doctor.requestStatus;
             await _context.SaveChangesAsync();
             return doc;
 

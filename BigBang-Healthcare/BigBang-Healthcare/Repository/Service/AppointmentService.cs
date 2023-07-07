@@ -1,10 +1,11 @@
 ﻿using BigBang_Healthcare.Data;
 using BigBang_Healthcare.Models;
+using BigBang_Healthcare.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace BigBang_Healthcare.Repository.Service
 {
-    public class AppointmentService
+    public class AppointmentService:IAppointmentService
     {
 
         private readonly HealthcareDbContext _context;
@@ -17,6 +18,20 @@ namespace BigBang_Healthcare.Repository.Service
         {
             return await _context.Appointments.ToListAsync();
 
+        }
+
+        public async Task<List<Appointment>?> GetAppointmentDetail(string id)
+        {
+            var appointments = await _context.Appointments
+            .Where(a => a.PatientId == id || a.DoctorId == id)
+            .ToListAsync();
+
+            if (appointments == null || appointments.Count == 0)
+            {
+                return null;
+            }
+
+            return appointments;
         }
         public async Task<Appointment> GetAppointment(int id)
         {
