@@ -1,0 +1,62 @@
+
+*{
+  font-family:  "Rubik", sans-serif;
+}img{
+    height: 500px;
+    margin-top:110px;
+    margin-left: 90px;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 350px;
+    padding: 50px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+h2{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+        animation: color-animation 4s linear infinite;
+        --color-1: #DF8453;
+        --color-2: #3D8DAE;
+        --color-3: #E4A9A8;
+}
+
+
+.btn{
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    width: 110px;
+    transition: all 0.5s;
+    cursor: pointer;
+    height: 30px;
+   
+
+}
+
+
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+  }
+  
+
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

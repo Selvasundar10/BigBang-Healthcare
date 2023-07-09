@@ -1,0 +1,35 @@
+*{
+      font-family:  "Rubik", sans-serif;
+    }
+.card{
+      background-color: rgb(227, 252, 252);
+      border : 10px;
+      width: 250px;
+      height: 250px;
+     margin-bottom: 2rem;
+     border-color: black;
+}
+.card-tittle, .card-text{
+      color: black;
+      
+}
+h3, p{
+      margin-left:20px;
+      font-size:13px;
+      
+}
+h1{
+      text-align: center;
+      font-weight: 500;
+}
+.body{
+      margin-top: 30px;
+}
+.btn{
+      margin-left:150px;
+      font-size: 13px;
+
+}
+
+
+/*  */

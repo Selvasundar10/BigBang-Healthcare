@@ -1,0 +1,71 @@
+<div class="login_form">
+      <div class="container">
+        <form #register_form="ngForm">
+          <div class="form-outline mb-4" >
+            <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register</h2>
+
+            <input type="text" class="form-control form-control-lg" required pattern="[a-zA-Z0-9]*"
+              placeholder="Username" id="id" name="id" #id="ngModel" [(ngModel)]="register.id" />
+            <div *ngIf="(id?.dirty || id?.touched)" class="text-danger">
+              <div *ngIf="!id?.valid">
+                <div *ngIf="id.errors?.['required']">
+                  User name is required
+                </div>
+                <div *ngIf="id.value && id.errors && !id.errors?.['required']">
+                  Please enter a valid input [Username should not contain special charaters]
+                </div>
+              </div>
+            </div>
+          </div><br>
+  
+  
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control form-control-lg" placeholder="Password"
+              [(ngModel)]="register.password" name="password" required
+              #password="ngModel" />
+            <div *ngIf="password.invalid && password.touched" class="text-danger">
+              <div *ngIf="password.errors?.['required']">Password is required.</div>
+             
+            </div>
+          </div>
+          <br>
+        
+          <!-- Email Field -->
+          <div class="form-outline mb-4">
+            <input type="email" class="form-control form-control-lg" placeholder="Email" name="email"
+              [(ngModel)]="register.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+              #email="ngModel" />
+            <div *ngIf="email.invalid && email.touched" class="text-danger">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
+            </div>
+          </div><br>
+         
+          <!-- Role Field -->
+          <div class="form-outline mb-4">
+            <select class="form-control form-control-lg"  [(ngModel)]="register.role" name="role" required
+              #role="ngModel" >
+              <option value="" disabled selected hidden >Select Role</option>
+              <option value="Doctor" >Doctor</option>
+              <option value="User">User</option>
+            </select>
+            <div *ngIf="role.invalid && role.touched" class="text-danger">
+              <div *ngIf="role.errors?.['required']">Role is required.</div>
+            </div>
+          </div><br>
+            <!-- Register Button -->
+            <div class="pt-3 mb-9">
+              <button class="btn btn-success" type="button" (click)="onPost()">Register</button>
+              <div *ngIf="showError" class="text-danger">Please fill all the fields.</div>
+            </div><br>
+  
+            <p class="mb-5 pb-lg-2" style="font-size:14px; cursor:pointer">Already have an account?
+              <a (click)="login_here()">Login here </a>
+            </p>
+  
+            <span *ngIf="registration_status">Registration successful</span>
+          </form>
+      </div>     
+          <div id="login_image">
+            <img src="../../assets/Login/login.jpg">
+</div>

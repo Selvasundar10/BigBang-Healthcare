@@ -1,0 +1,82 @@
+/*
+    DEMO STYLE
+*/
+
+#myDiv {
+      transform: rotateZ(270deg);
+      margin-top: 90px;
+    }
+ 
+
+
+.navbar-btn {
+  outline: none !important;
+}
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 700px;
+  background: white;
+  transition: all 0.3s;
+}
+#sb-flex{
+  display: flex;
+}
+
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: white;
+}
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+button {
+  padding: 20px;
+  height: 320px !important;
+  width:55px;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+img{
+  height: 100px;
+  margin-left:300px;}
+
+
+#test{
+  text-align: center;
+}
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+ 
+}
